@@ -28,9 +28,9 @@ def jpg_to_pdf(images, pdf_path):
         # scale image down to max size of A4 if its too big
         width, height = scale_down(width, height, 595, 842)
         
-        # Add a page
-        pdf.add_page(format=[width, height])
-        
+        # Add a page with the custom width and height
+        pdf.add_page(orientation="P")
+
         # Insert the image into the PDF
         pdf.image(image_path, 0, 0, width, height)
         
